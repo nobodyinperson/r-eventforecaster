@@ -1,0 +1,12 @@
+Package: eventforecaster
+Type: Package
+Title: Simple yet effective event forecasting mechanism
+Version: 0.0.1
+Author: Yann Büchau <nobodyinperson@gmx.de>
+Maintainer: Yann Büchau <nobodyinperson@gmx.de>
+Description: This package provides functions to calculate event occurance 
+    probabilities given a sequence of occured events.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
