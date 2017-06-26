@@ -51,3 +51,30 @@ ensemble_member_generator <- function(
         }
     return(fun)
     }
+
+#' Get event occurrence probabilities from ensemble
+#'
+#' @param ensemble the ensemble
+#' @param event_duration the duration of an event
+#' @param times the times to get the probabilities for
+#'
+#' @export
+ensemble_probabilities_times <- function(
+    ensemble,
+    event_duration,
+    times
+    ) {
+    # is in this set of events an event at the given time?
+    event_at_time <- function(events,time)
+        any(events<time&time<events+event_duration)
+    # what is the occurrence probability for this given time?
+    occurrence_prob_at_time <- function(time) {
+        length(which( # count
+            sapply(ensemble, function(member) # what members
+                    event_at_time(events=member,time=time)) # see an event here
+            )) / length( ensemble) # norm it to get a percentage
+        }
+    times_prob <- sapply( as.numeric(times), occurrence_prob_at_time )
+    res <- data.frame( time = times, prob = times_prob )
+    return(res)
+    }
