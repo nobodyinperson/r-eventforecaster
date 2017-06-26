@@ -4,8 +4,8 @@ Title: Simple yet effective event forecasting mechanism
 Version: 0.0.1
 Author: Yann Büchau <nobodyinperson@gmx.de>
 Maintainer: Yann Büchau <nobodyinperson@gmx.de>
-Description: This package provides functions to calculate event occurance 
-    probabilities given a sequence of occured events.
+Description: This package provides functions to calculate event occurrence 
+    probabilities given a sequence of occurred events.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
